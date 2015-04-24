@@ -1,7 +1,7 @@
 require 'net/http'
 require 'nokogiri'
 
-module UruguayanExchangeRates 
+module UruguayanExchangeRates
   class Util
     attr_accessor :currency_raw
 
@@ -25,7 +25,7 @@ module UruguayanExchangeRates
       values = data.css('#exchangeRatesLarge').at('tr:contains("' + currency_raw + '")')
     end
 
-    def currency_values(currency_data)
+    def extract_values(currency_data)
       # Remove unnecessary spaces
       values = currency_data.text.strip
       # Remove name

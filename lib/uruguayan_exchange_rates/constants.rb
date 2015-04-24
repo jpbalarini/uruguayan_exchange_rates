@@ -3,7 +3,6 @@ require_relative 'enumeration'
 module UruguayanExchangeRates
   class Constants < Enumeration
     self.add_item(:UYU_USD, 'Dólar')
-    self.add_item(:UYU_USD_EBROU, 'Dólar e-Brou')
     self.add_item(:UYU_EUR, 'Euro')
     self.add_item(:UYU_ARS, 'Peso Argentino')
     self.add_item(:UYU_BRL, 'Real')

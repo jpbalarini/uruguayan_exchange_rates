@@ -19,10 +19,10 @@ module UruguayanExchangeRates
 
     # Find currency in page
     currency_data = util.find_currency(data)
-    
+
     raise CurrencyNotFound, 'Currency not found' if currency_data.nil?
-    
+
     # Get values
-    util.currency_values(currency_data)
+    util.extract_values(currency_data)
   end
 end
