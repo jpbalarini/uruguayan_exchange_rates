@@ -1,9 +1,11 @@
 require 'uruguayan_exchange_rates/version'
 require 'uruguayan_exchange_rates/constants'
+require 'uruguayan_exchange_rates/error'
 require 'net/http'
 require 'nokogiri'
 
 # TODO: remove nokogiri and add a regular expression
+# TODO: separate things in different methods
 
 module UruguayanExchangeRates
   SERVICE_HOST = 'http://www.bancorepublica.com.uy'
@@ -16,18 +18,18 @@ module UruguayanExchangeRates
     result = Net::HTTP.get(uri)
     parsed_doc = Nokogiri::HTML(result)
 
-    current_currency = Constants[currency]
-    values = parsed_doc.css('#exchangeRatesLarge').at('tr:contains("' + current_currency + '")')
-    if values.nil?
-      raise CurrencyNotFound, 'Currency not found'
-    else
-      # Remove unnecessary spaces
-      values = values.text.strip
-      # Remove name
-      values.gsub!(current_currency, '')
-      # Remove spaces
-      values.gsub!(/(?:\n\r?|\r\n?)/, ' ').strip!
-      buy, sell = values.split(/\s+/).map{ |v| v.to_f }
-    end
+    # Find currency in page
+    currency_string = Constants[currency]
+    values = parsed_doc.css('#exchangeRatesLarge').at('tr:contains("' + currency_string + '")')
+    
+    raise CurrencyNotFound, 'Currency not found' if values.nil?
+    
+    # Remove unnecessary spaces
+    values = values.text.strip
+    # Remove name
+    values.gsub!(currency_string, '')
+    # Remove spaces
+    values.gsub!(/(?:\n\r?|\r\n?)/, ' ').strip!
+    buy, sell = values.split(/\s+/).map{ |v| v.to_f }
   end
 end
