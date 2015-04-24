@@ -14,8 +14,6 @@ module UruguayanExchangeRates
     result = Net::HTTP.get(uri)
     parsed_doc = Nokogiri::HTML(result)
     values = parsed_doc.css('#exchangeRatesLarge').at('tr:contains("' + currency + '")')
-    puts '//////////////////'
-    puts Constants::DOLLAR
     if values.nil?
       raise 'Currency not found'
     else
