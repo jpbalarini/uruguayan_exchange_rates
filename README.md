@@ -1,6 +1,6 @@
-# UruguayanExchangeRates
+# Uruguayan Exchange Rates
 
-Uruguayan exchange rates taken from the Banco República.
+Uruguayan exchange rates taken from Banco República.
 
 ## Installation
 
