@@ -5,6 +5,8 @@ require 'uruguayan_exchange_rates/util'
 
 # TODO: remove nokogiri and add a regular expression
 # TODO: add tests
+# TODO: fix readme
+# TODO: compare in lowercase
 
 module UruguayanExchangeRates
   SERVICE_HOST = 'http://www.bancorepublica.com.uy'
@@ -13,6 +15,7 @@ module UruguayanExchangeRates
   def self.exchange_rates(currency)
     currency_raw = Constants[currency]
     raise InvalidCurrency, 'Invalid currency' if currency_raw.nil?
+    
     util = Util.new(currency_raw: currency_raw)
     # Make request
     data = util.request_data
