@@ -10,17 +10,21 @@ module UruguayanExchangeRates
   SERVICE_PATH = '/web/guest/institucional/cotizaciones'
 
   def self.exchange_rates(currency)
+    raise 'Invalid currency' if Constants[currency].nil?
+    # Make request
     uri = URI.parse(SERVICE_HOST + SERVICE_PATH)
     result = Net::HTTP.get(uri)
     parsed_doc = Nokogiri::HTML(result)
-    values = parsed_doc.css('#exchangeRatesLarge').at('tr:contains("' + currency + '")')
+
+    current_currency = Constants[currency]
+    values = parsed_doc.css('#exchangeRatesLarge').at('tr:contains("' + current_currency + '")')
     if values.nil?
       raise 'Currency not found'
     else
       # Remove unnecessary spaces
       values = values.text.strip
       # Remove name
-      values.gsub!(currency, '')
+      values.gsub!(current_currency, '')
       # Remove spaces
       values.gsub!(/(?:\n\r?|\r\n?)/, ' ').strip!
       buy, sell = values.split(/\s+/).map{ |v| v.to_f }
