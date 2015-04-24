@@ -2,6 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/jpbalarini/uruguayan_exchange_rates/badges/gpa.svg)](https://codeclimate.com/github/jpbalarini/uruguayan_exchange_rates)
 
+[![Build Status](https://travis-ci.org/jpbalarini/uruguayan_exchange_rates.svg?branch=master)](https://travis-ci.org/jpbalarini/uruguayan_exchange_rates)
+
 Uruguayan exchange rates taken from Banco República.
 
 ## Installation
