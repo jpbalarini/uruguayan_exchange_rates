@@ -5,6 +5,8 @@ require 'uruguayan_exchange_rates/util'
 
 # TODO: remove nokogiri and add a regular expression
 # TODO: compare in lowercase
+# TODO: add version numbers to gem dependencies
+# TODO: pass multiple currencies to lower server requests
 
 module UruguayanExchangeRates
   SERVICE_HOST = 'http://www.bancorepublica.com.uy'
