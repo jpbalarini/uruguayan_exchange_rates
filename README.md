@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/jpbalarini/uruguayan_exchange_rates/badges/gpa.svg)](https://codeclimate.com/github/jpbalarini/uruguayan_exchange_rates)
 [![Build Status](https://travis-ci.org/jpbalarini/uruguayan_exchange_rates.svg?branch=master)](https://travis-ci.org/jpbalarini/uruguayan_exchange_rates)
 
-With this gem you can get the official Uruguayan exchange rates (buy and sell) for multiple currencies. Data is taken from Banco República.
+With this gem you can get the official Uruguayan exchange rates (buy and sell values) for multiple currencies. Data is taken from Banco República.
 This gem was designed for a project where I needed to update the price of some elements daily, using the official Uruguayan exchange rates.
 
 ## Installation
