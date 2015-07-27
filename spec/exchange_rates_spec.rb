@@ -5,8 +5,8 @@ describe UruguayanExchangeRates do
   context 'with valid params' do
     it 'should return 2 parameters' do
       UruguayanExchangeRates::Constants.keys.each do |key|
-        expect(UruguayanExchangeRates::exchange_rates(key)[0]).to be > 0.0
-        expect(UruguayanExchangeRates::exchange_rates(key)[1]).to be > 0.0
+        expect(UruguayanExchangeRates::exchange_rates(key)[:buy]).to be > 0.0
+        expect(UruguayanExchangeRates::exchange_rates(key)[:sell]).to be > 0.0
         expect(UruguayanExchangeRates::exchange_rates(key).count).to eq(2)
       end
     end

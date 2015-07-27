@@ -26,9 +26,9 @@ Usage is simple, just call the exchange_rates method with a valid key:
   
     UruguayanExchangeRates.exchange_rates(:UYU_USD)
 
-It should return an array with two elements, buy and sell values respectively:
+It should return a hash with two elements, buy and sell values respectively:
   
-    [25.95, 26.75]
+    {:buy=>28.0, :sell=>28.8} 
 
 Supported keys are:
   

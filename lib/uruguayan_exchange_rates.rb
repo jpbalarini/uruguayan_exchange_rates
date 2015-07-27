@@ -3,14 +3,9 @@ require 'uruguayan_exchange_rates/constants'
 require 'uruguayan_exchange_rates/error'
 require 'uruguayan_exchange_rates/util'
 
-# TODO: remove nokogiri and add a regular expression
-# TODO: compare in lowercase
-# TODO: add version numbers to gem dependencies
-# TODO: pass multiple currencies to lower server requests
-
 module UruguayanExchangeRates
   SERVICE_HOST = 'http://www.bancorepublica.com.uy'
-  SERVICE_PATH = '/web/guest/institucional/cotizaciones'
+  SERVICE_PATH = '/c/portal/render_portlet?p_l_id=123137&p_p_id=ExchangeLarge_WAR_ExchangeRate5121_INSTANCE_P2Af'
 
   def self.exchange_rates(currency)
     currency_raw = Constants[currency]

@@ -33,6 +33,7 @@ module UruguayanExchangeRates
       # Remove spaces
       values.gsub!(/(?:\n\r?|\r\n?)/, ' ').strip!
       buy, sell = values.split(/\s+/).map{ |v| v.to_f }
+      { buy: buy, sell: sell }
     end
   end
 end
