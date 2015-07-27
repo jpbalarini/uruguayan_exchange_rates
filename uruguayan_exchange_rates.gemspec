@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Juan Pablo Balarini']
   spec.email         = ['jpbalarini@gmail.com']
   spec.summary       = %q{Uruguayan exchange rates.}
-  spec.description   = %q{Uruguayan exchange rates. Data is taken from the Banco Republica.}
+  spec.description   = %q{Uruguayan exchange rates. Data is taken from Banco Republica.}
   spec.homepage      = ''
   spec.license       = 'MIT'
 
